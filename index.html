@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Weather-forecast-app</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-r from-purple-500 to-pink-500  ">
+    <header class="header flex justify-center items-center p-3 bg-blue-500  ">
+        <h1 class="text-3xl font-bold text-white 
+ ">Weather App</h1>
+    </header>
+    <main>
+        
+        <div class="containner flex flex-col justify-center items-center  sm:flex-row   gap-3">
+
+            <!--Creating search section -->
+            <section class="search-section w-96 p-4 m-2 sm:w-1/4 flex flex-col gap-4 ">
+                <!--created search section-->
+                <label for="city" class=" pl-2 text-l font-bold"> Enter a City Name </label>
+                <input id="city" type="text" placeholder="E.g., New York, London, Tokyo" class="border-2 border-gray-700 focus:border-pink-600
+                p-3 rounded-xl  ">
+
+                <!--Dropdown list -->
+
+                <select id="recent-dropdown" class="hidden p-2 bg-white shadow-md rounded w-1/4 z-50"></select>
+
+                <!--buttons creation -->
+                <button id="search-btn" class="bg-sky-500 hover:bg-sky-700 text-white border-solid rounded-full p-3 "> Search </button>
+
+                <p class="text-center">or</p>
+
+                <button id="location-btn" class="bg-gray-200  hover:bg-gray-400 text-gray-800 border-solid rounded-full p-3">Use Current Location</button>
+
+            </section>
+
+            <!-- Weather Display -->
+            <section class="weather-display w-3/4 p-2 ">
+                <!-- Current Weather -->
+                <div id="currentWeather">
+                    <!-- We will inject city, date, temp, wind, humidity, icon here -->
+                     <div class=" inner-container bg-white
+                     rounded-xl shadow-md p-6 mt-6 text-center flex flex-row justify-around ">
+
+                        <div class="left-container  ">
+                            <h2 class="text-2xl font-bold"> London</h2>
+                            
+                            <div class="space-y-2">
+
+                            <p>Temperature: <span>32<sup>o</sup>C</span></p>
+                            <p>Wind: <span>2.85 M/S</span></p>
+                            <p>Humidity: <span>88%</span></p>
+
+                            </div>
+
+
+                        </div>
+
+                        <div class="right-container">
+                            <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather icon" class="w-30 h-30 mx-auto">
+                            <p class="text-lg text-gray-400 mb-1">scattered clouds</p>
+
+                        </div>
+                     
+
+                     </div>
+
+                </div>
+
+            <!-- 5-Day Forecast -->
+            <h2 class="mt-6 mb-6 text-2xl font-bold ps-8">5-Day Forecast</h2>
+            <div id="forecastContainer" class=" m-3 p-5 ">
+                <!-- JS will add forecast cards here -->
+                 <div id="forecast" class="flex flex-col sm:flex-row md:flex-row md:flex-wrap justify-center gap-4  mt-6"></div>
+
+            </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!--link js file -->
+    <script src="app.js"></script>
+
+</body>
+</html>
+
+
